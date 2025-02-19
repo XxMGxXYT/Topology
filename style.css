@@ -1,0 +1,306 @@
+:root {
+    --main-color: #120149;
+    --secondary-color: #33ca83;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+.container {
+    width: 1000px;
+    padding: 0px 20px;
+    margin: 0px auto;
+}
+
+body {
+    font-family: "open sans", sans-serif;
+    background-color: #1c1b1b;
+}
+
+header {
+    background-color: white;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    width: 280px;
+}
+
+header .logo img {
+    width: 100%;
+    height: 100%;
+}
+
+header nav {
+    width: 60%;
+    height: 100%;
+    transition: 0.3s;
+    transition-property: top, opacity;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 40px;
+    height: 100%;
+}
+
+header nav ul li {
+    font-size: 1.3rem;
+    height: 25px;
+    font-weight: 600;
+}
+
+
+header nav ul li::after {
+    content: "";
+    margin-top: 5px;
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: var(--main-color);
+    transition: width 0.3s;
+}
+
+header nav ul li:hover::after {
+    width: 110%;
+}
+
+header nav a {
+    display: block;
+    text-decoration: none;
+    color: var(--main-color);
+    height: 100%;
+    width: 100%;
+}
+
+header .listIcon {
+    transition: 0.3s;
+}
+
+header .listIcon svg {
+    color: var(--main-color);
+    font-size: 35px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+header .activeListIcon svg {
+    transform: rotate(90deg);
+    color: var(--secondary-color);
+}
+
+header .activeList {
+    top: 100px;
+    opacity: 1;
+}
+
+/* Small Mobiles */
+
+@media (max-width: 600px) {
+    .container {
+        width: 100%;
+    }
+
+    /* Header */
+    header {
+        position: relative;
+    }
+
+    header nav {
+        position: absolute;
+        top: -640px;
+        left: 0;
+        width: 100%;
+        height: 713px;
+        background-color: #f8f8f8;
+        z-index: -1;
+        opacity: 0;
+    }
+
+    header .logo {
+        width: 220px;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        justify-content: center;
+        padding: 0px 15px;
+        height: 350px;
+    }
+
+    header nav ul li {
+        width: 100%;
+        height: 40px;
+        transition: transform 0.3s;
+    }
+
+    header nav ul li:hover {
+        transform: translate(5px, -5px);
+    }
+
+    header nav ul li:hover::after {
+        width: 100%;
+    }
+
+    header nav a {
+        display: inline-block;
+        width: 100%;
+    }
+
+    header .listIcon svg {
+        font-size: 30px;
+    }
+
+    /* Header */
+}
+
+/* Mobiles */
+
+@media (min-width: 600px) and (max-width: 768px) {
+    .container {
+        width: 100%;
+    }
+
+    /* Header */
+    header {
+        position: relative;
+    }
+
+    header nav {
+        position: absolute;
+        top: -640px;
+        left: 0;
+        width: 100%;
+        height: 713px;
+        background-color: #f8f8f8;
+        z-index: -1;
+        opacity: 0;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        justify-content: center;
+        height: 350px;
+        padding: 0px 15px;
+    }
+
+    header nav ul li {
+        width: 100%;
+        height: 40px;
+        transition: transform 0.3s;
+    }
+
+    header nav ul li:hover {
+        transform: translate(5px, -5px);
+    }
+
+    header nav ul li:hover::after {
+        width: 100%;
+    }
+
+    header nav a {
+        display: inline-block;
+        width: 100%;
+    }
+
+    /* Header */
+}
+
+/* Tablets */
+
+@media (min-width: 768px) and (max-width: 992px) {
+    .container {
+        width: 100%;
+    }
+
+    /* Header */
+    header {
+        position: relative;
+    }
+
+    header .container {
+        padding: 0px 40px;
+    }
+
+    header nav {
+        position: absolute;
+        top: -640px;
+        left: 0;
+        width: 100%;
+        height: 713px;
+        background-color: #f8f8f8;
+        z-index: -1;
+        opacity: 0;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        justify-content: center;
+        height: 350px;
+        padding: 0px 15px;
+    }
+
+    header nav ul li {
+        width: 100%;
+        height: 40px;
+        transition: transform 0.3s;
+    }
+
+    header nav ul li:hover {
+        transform: translate(5px, -5px);
+    }
+
+    header nav ul li:hover::after {
+        width: 100%;
+    }
+
+    header nav a {
+        display: inline-block;
+        width: 100%;
+    }
+
+    /* Header */
+}
+
+
+/* Mediuam */
+
+@media (min-width: 992px) and (max-width: 1200px) {
+    .container {
+        width: 970px;
+    }
+
+    header svg {
+        display: none !important
+    }
+}
+
+/* Larg */
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1240px;
+    }
+
+    header svg {
+        display: none !important
+    }
+}
